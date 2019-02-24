@@ -10,7 +10,7 @@ imgR = cv2.imread('../data/right.png', 0)
 block_size = 15
 
 min_disp = 0
-num_disp = 320 - min_disp
+num_disp = 16    # 必须取16的整数倍
 uniquenessRatio = 10
 
 
@@ -19,7 +19,7 @@ stereo.setUniquenessRatio(uniquenessRatio)
 
 
 # disparity = stereo.compute(imgL,imgR)
-disparity = stereo.compute(imgL, imgR).astype(np.float32) / 16.0
+disparity = stereo.compute(imgL, imgR).astype(np.float32) / 16.0  
 
 print "saving disparity as disparity_image_bm.txt"
 np.savetxt("../data/disparity_image_bm.txt", disparity, fmt='%3.2f', delimiter=' ', newline='\n')
