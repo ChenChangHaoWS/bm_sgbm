@@ -25,7 +25,7 @@ disparity = stereo.compute(imgL, imgR).astype(np.float32) / 16.0
 
 plt.imshow(disparity,'gray')
 plt.axis('off')   # 去掉坐标轴
-plt.savefig('...', disparity)
+plt.savefig('...')
 plt.show()
 
 disparity = cv2.imread('', cv2.IMREAD_GRAYSCALE)
